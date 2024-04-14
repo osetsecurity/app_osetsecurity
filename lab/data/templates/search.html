@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişi Arama Sonuçları</title>
+</head>
+<body>
+    <h1>{{ name }} için İhlal Sonuçları</h1>
+    {% if breaches %}
+    <ul>
+        {% for breach in breaches %}
+        <li>{{ breach["Name"] }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Hiçbir ihlal bulunamadı.</p>
+    {% endif %}
+</body>
+</html>

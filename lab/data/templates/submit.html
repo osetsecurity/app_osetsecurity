@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Gönderildi</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS dosyasını ekliyoruz -->
+    <link rel="stylesheet" href="styles.css"> <!-- Özelleştirilmiş CSS dosyasını ekliyoruz -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">Form Gönderildi!</h1>
+            <p class="text-center">{{ processed_message }}</p>
+            {% if breaches %}
+            <div class="breach-container mt-4">
+                <h2 class="text-center mb-3">Hesabınızla İlişkilendirilmiş İhlaller:</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            {% for breach in breaches %}
+                            <li class="list-group-item text-center">{{ breach["Name"] }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <p class="text-center mt-4">Hesabınızla ilişkilendirilmiş herhangi bir ihlal bulunamadı.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

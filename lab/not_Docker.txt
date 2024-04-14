@@ -1,0 +1,11 @@
+$servername = "mysql_db";
+$username = "root"; // Veritabanı kullanıcı adı
+$password = "root"; // Veritabanı şifre
+$dbname = "data"; // Veritabanı adı
+
+
+docker-compose up --build
+sas
+
+
+142.250.188.14
